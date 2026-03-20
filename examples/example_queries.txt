@@ -1,0 +1,46 @@
+# Example Queries for Query Optimizer RAG
+
+These are example questions that showcase the system's ability to decompose
+complex questions and synthesize comprehensive answers.
+
+## Example 1: Comparative Analysis
+Query: "What's the difference between photosynthesis and chemosynthesis, and why did photosynthesis become dominant on Earth?"
+
+This question has multiple implicit parts:
+- What is photosynthesis?
+- What is chemosynthesis?
+- How do they differ?
+- Why did photosynthesis become more dominant?
+
+The system decomposes this, retrieves relevant information for each part, then synthesizes a comprehensive answer.
+
+## Example 2: Historical and Functional
+Query: "How did the evolution of photosynthetic organisms change Earth's atmosphere, and what were the ecological consequences?"
+
+Sub-questions:
+- What was Earth's atmosphere before photosynthesis?
+- How did photosynthetic organisms change the atmosphere?
+- What were the consequences of these changes?
+- How did this enable new life forms?
+
+## Example 3: Multi-step Reasoning
+Query: "Explain why chemosynthetic organisms exist today despite photosynthesis being more efficient, and what environments they inhabit."
+
+Sub-questions:
+- Why is photosynthesis more efficient than chemosynthesis?
+- Why do chemosynthetic organisms still exist?
+- Where are they found?
+- What are the conditions in those environments?
+
+---
+
+To run these queries:
+
+1. First, index the documents:
+   python src/indexing.py
+
+2. Run a query:
+   python src/query.py --query "Your question here"
+
+3. For detailed output with intermediate steps:
+   python src/query.py --query "Your question here" --verbose
